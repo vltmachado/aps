@@ -1,21 +1,20 @@
 package abstractFactory;
 
-public class FabricaWindows implements FabricaAbstrata{
+public class FabricaAndroid implements FabricaAbstrata {
 
 	@Override
 	public Janela criarJanela() {
-		return new JanelaWindows();
+		return new JanelaAndroid();
 	}
 
 	@Override
 	public Menu criarMenu() {
-		return new MenuWindows();
+		return new MenuAndroid();
 	}
 
 	@Override
 	public Botao criarBotao() {
-		return new BotaoWindows();
+		return new BotaoAndroid();
 	}
-
 
 }

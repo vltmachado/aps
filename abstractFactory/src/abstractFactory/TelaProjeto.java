@@ -2,30 +2,29 @@ package abstractFactory;
 
 public class TelaProjeto {
 
-	private FabricaWindows fabricaWindows;
+	private FabricaAbstrata fabricaAbstrata;
+	private Janela janela;
+	private Menu menu;
+	private Botao botao;
 
-	public void setFabrica(FabricaWindows fabricaWindows) {
-		this.setFabricaWindows(fabricaWindows);
+	public void setFabrica(FabricaAbstrata fabrica) {
+		this.fabricaAbstrata = fabrica;
 
 		
 	}
 
 	public void montar() {
-		// TODO Auto-generated method stub
+		janela=this.fabricaAbstrata.criarJanela();
+		menu=this.fabricaAbstrata.criarMenu();
+		botao=this.fabricaAbstrata.criarBotao();
+		
+
 		
 	}
 
 	public String desenhar() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public FabricaWindows getFabricaWindows() {
-		return fabricaWindows;
-	}
-
-	public void setFabricaWindows(FabricaWindows fabricaWindows) {
-		this.fabricaWindows = fabricaWindows;
+		
+		return janela.desenhar()+"{"+menu.desenhar()+","+botao.desenhar()+"}";
 	}
 
 
